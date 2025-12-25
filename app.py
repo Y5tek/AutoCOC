@@ -5,7 +5,6 @@ import json
 import os
 import zipfile
 import io
-import base64
 import re
 from datetime import datetime
 from PIL import Image
@@ -14,7 +13,7 @@ from PIL import Image
 SABLON_DOSYASI = "sablonlar.json"
 LOGO_KLASORU = "logos"
 IMZA_DOSYASI = os.path.join(LOGO_KLASORU, "signature.png")
-SIRKET_LOGOSU = "photo.jpg"
+SIRKET_LOGOSU = "photo.jpg" 
 
 if not os.path.exists(LOGO_KLASORU):
     os.makedirs(LOGO_KLASORU)
@@ -65,22 +64,22 @@ def sablon_sil(isim):
 def pdf_olustur(vin, veri, manuel_tarih_str=None):
     pdf = FPDF(orientation='L', unit='mm', format='A4')
     pdf.set_margins(left=10, top=10, right=10)
-    font_path = "arial.ttf" if os.path.exists("arial.ttf") else "Arial.ttf"
-    try:
+    font_path = "arial.ttf"
+    if os.path.exists(font_path):
         pdf.add_font("ArialTR", style="", fname=font_path, uni=True)
         pdf.add_font("ArialTR", style="B", fname=font_path, uni=True)
         ana_font = "ArialTR"
-    except: ana_font = "Helvetica"
+    else: ana_font = "Helvetica"
 
     def text_safe(txt):
         if txt is None or str(txt).lower() in ['none', 'nan']: return ""
-        return str(txt).replace("İ", "I").replace("ı", "i").replace("Ğ", "G").replace("ğ", "g").replace("Ş", "S").replace("ş", "s").replace("Ü", "U").replace("ü", "u").replace("Ö", "O").replace("ö", "o").replace("Ç", "C").replace("ç", "c")
+        tr_map = str.maketrans("İıĞğŞşÜüÖöÇç", "IiGgSsUuOoCc")
+        return str(txt).translate(tr_map)
 
     pdf.add_page()
     pdf.set_auto_page_break(auto=False)
     kimlik = veri.get("kimlik", {})
-    maddeler = sorted([dict(m) for m in veri.get("teknik", [])],
-                      key=lambda x: pd.to_numeric(str(x.get("Sıra", 999)).replace(',', '.'), errors='coerce'))
+    maddeler = veri.get("teknik", [])
     
     aciklama_metni = kimlik.get("aciklama", VARSAYILAN_ACIKLAMA_METNI)
     taahut_metni = kimlik.get("taahut", VARSAYILAN_TAAHHUT_METNI)
@@ -112,10 +111,10 @@ def pdf_olustur(vin, veri, manuel_tarih_str=None):
         
         pdf.set_font(ana_font, "B", fs)
         curr_y = pdf.get_y()
-        if curr_y > 190 and x_pos == 10:
+        if curr_y > 185 and x_pos == 10:
             x_pos = 155; pdf.set_y(header_end_y); curr_y = header_end_y
 
-        pdf.set_xy(x_pos, curr_y); pdf.cell(14, base_h, t_kod)
+        pdf.set_xy(x_pos, curr_y); pdf.cell(14, base_h, t_kod) 
         pdf.set_xy(x_pos + 14, curr_y); pdf.multi_cell(60, base_h, text_safe(m.get('Özellik Adı', '')))
         y_aft = pdf.get_y()
         pdf.set_xy(x_pos + 76, curr_y); pdf.multi_cell(64, base_h, f": {val}")
@@ -128,7 +127,7 @@ def pdf_olustur(vin, veri, manuel_tarih_str=None):
             pdf.set_xy(x_pos, imza_y + 10); pdf.cell(85, 5, f"Yer: {yer_bilgisi} | Tarih: {tarih_bilgisi}")
             pdf.set_y(imza_y + 25); v_done = True
 
-    pdf.line(152, header_end_y, 152, 200)
+    pdf.line(152, 25, 152, 200)
     return pdf
 
 # --- ARAYÜZ ---
@@ -143,112 +142,91 @@ menu = st.sidebar.radio("Menü", ["🏠 Ana Sayfa", "🏭 Belge Üretimi", "📝
 if menu == "🏠 Ana Sayfa":
     st.title("📊 AutoCOC Özet Gösterge Paneli")
     sablonlar = sablonlari_yukle()
-    
-    marka_datalar = {}
-    for k, v in sablonlar.items():
-        m_ad = v['kimlik'].get('marka', 'Bilinmeyen')
-        marka_datalar[m_ad] = marka_datalar.get(m_ad, 0) + 1
+    marka_datalar = {v['kimlik'].get('marka', 'Bilinmeyen'): 0 for v in sablonlar.values()}
+    for k, v in sablonlar.items(): marka_datalar[v['kimlik'].get('marka', 'Bilinmeyen')] += 1
 
-    col1, col2 = st.columns(2)
-    col1.metric("Toplam Marka", len(marka_datalar))
-    col2.metric("Toplam Şablon", len(sablonlar))
-
+    c1, c2 = st.columns(2)
+    c1.metric("Toplam Marka", len(marka_datalar))
+    c2.metric("Toplam Şablon", len(sablonlar))
     st.divider()
-    st.subheader("🖼️ Kayıtlı Markalar")
-    if marka_datalar:
-        g_cols = st.columns(4)
-        for i, (m_ad, s_sayisi) in enumerate(marka_datalar.items()):
-            with g_cols[i % 4]:
-                logo_p = os.path.join(LOGO_KLASORU, f"{m_ad}.png")
-                if os.path.exists(logo_p): st.image(logo_p, width=100)
-                st.write(f"**{m_ad}** ({s_sayisi} Şablon)")
-    else: st.info("Henüz kayıt bulunmuyor.")
-
-# --- ŞABLON YÖNETİMİ ---
-elif menu == "📝 Şablon Yönetimi":
-    st.header("🛠️ Şablon Yönetimi")
-    tab1, tab2 = st.tabs(["📂 Mevcut Şablonu Düzenle", "🆕 Sıfırdan Yeni Şablon"])
-    
-    with tab1:
-        s_all = sablonlari_yukle()
-        if s_all:
-            # --- ŞABLON ARAMA ---
-            search_query = st.text_input("🔍 Şablon Ara (İsim veya Marka yazın)", placeholder="Ara...").lower()
-            
-            # Filtreleme mantığı
-            filtered_templates = {k: v for k, v in s_all.items() if search_query in k.lower() or search_query in v['kimlik'].get('marka', '').lower()}
-            
-            if filtered_templates:
-                marka_listesi = sorted(list(set(v['kimlik'].get('marka', '') for v in filtered_templates.values())))
-                m_sec = st.selectbox("1. Marka Filtresi", marka_listesi)
-                
-                final_options = [k for k, v in filtered_templates.items() if v['kimlik'].get('marka', '') == m_sec]
-                s_sec = st.selectbox("2. Şablon Seç", final_options)
-                
-                c_load, c_del = st.columns([1, 4])
-                with c_load:
-                    if st.button("📂 Yükle"):
-                        st.session_state.current_df = pd.DataFrame(s_all[s_sec]["teknik"])
-                        st.session_state.marka = s_all[s_sec]["kimlik"].get("marka", "")
-                        st.session_state.taahut = s_all[s_sec]["kimlik"].get("taahut", VARSAYILAN_TAAHHUT_METNI)
-                        st.session_state.aciklama = s_all[s_sec]["kimlik"].get("aciklama", VARSAYILAN_ACIKLAMA_METNI)
-                        st.session_state.yer = s_all[s_sec]["kimlik"].get("yer", "Ankara / Turkiye")
-                        st.session_state.s_ad = yeni_versiyon_adi_bul(s_sec); st.rerun()
-                with c_del:
-                    if st.button("🗑️ Şablonu Sil", type="primary"):
-                        if sablon_sil(s_sec): st.success("Silindi!"); st.rerun()
-            else: st.warning("Arama sonucu bulunamadı.")
-        else: st.info("Şablon yok.")
-
-    with tab2:
-        st.subheader("Yeni Şablon Girişi")
-        yuklenen_dosya = st.file_uploader("Excel/CSV Yükle", type=["xlsx", "csv"])
-        if yuklenen_dosya:
-            st.session_state.current_df = pd.read_excel(yuklenen_dosya) if yuklenen_dosya.name.endswith('.xlsx') else pd.read_csv(yuklenen_dosya)
-            st.success("Yüklendi!")
-        if st.button("✨ Tabloyu Sıfırla"):
-            st.session_state.current_df = pd.DataFrame(columns=["Sıra", "Kod", "Özellik Adı", "Değer"])
-            st.session_state.s_ad = ""; st.rerun()
-
-    st.divider()
-    col_a, col_b = st.columns(2)
-    s_ad = col_a.text_input("Şablon İsmi", value=st.session_state.get('s_ad', ''))
-    marka = col_b.text_input("Marka Adı", value=st.session_state.get('marka', ''))
-    taahut = st.text_area("Taahhüt Metni", value=st.session_state.get('taahut', VARSAYILAN_TAAHHUT_METNI))
-    aciklama = st.text_area("Yasal Metin", value=st.session_state.get('aciklama', VARSAYILAN_ACIKLAMA_METNI))
-    yer = st.text_input("Yer Bilgisi", value=st.session_state.get('yer', "Ankara / Turkiye"))
-    final_df = st.data_editor(st.session_state.current_df, num_rows="dynamic", use_container_width=True)
-    
-    if st.button("💾 Kaydet"):
-        if s_ad and marka:
-            sablon_kaydet(s_ad, {"marka": marka, "taahut": taahut, "aciklama": aciklama, "yer": yer}, final_df)
-            st.success("Kaydedildi!"); st.rerun()
+    cols = st.columns(4)
+    for i, (m, s) in enumerate(marka_datalar.items()):
+        with cols[i % 4]:
+            lp = os.path.join(LOGO_KLASORU, f"{m}.png")
+            if os.path.exists(lp): st.image(lp, width=100)
+            st.write(f"**{m}** ({s} Şablon)")
 
 # --- BELGE ÜRETİMİ ---
 elif menu == "🏭 Belge Üretimi":
     st.header("🖨️ PDF Üretim Merkezi")
     sablonlar = sablonlari_yukle()
     if sablonlar:
-        # --- ÜRETİM SAYFASI ARAMA ---
-        prod_search = st.text_input("🔍 Şablon Ara (Marka veya Model)", "").lower()
-        filtered_prod = {k: v for k, v in sablonlar.items() if prod_search in k.lower() or prod_search in v['kimlik'].get('marka', '').lower()}
+        s_search = st.text_input("🔍 Şablon Ara (Marka veya Model)", "").lower()
+        f_sablonlar = {k: v for k, v in sablonlar.items() if s_search in k.lower() or s_search in v['kimlik'].get('marka', '').lower()}
         
-        if filtered_prod:
-            m_list = sorted(list(set(v['kimlik'].get('marka', '') for v in filtered_prod.values())))
+        if f_sablonlar:
+            m_list = sorted(list(set(v['kimlik'].get('marka', '') for v in f_sablonlar.values())))
             sec_m = st.selectbox("Marka Seç", m_list)
-            secim = st.selectbox("Şablon Seç", [k for k,v in filtered_prod.items() if v['kimlik'].get('marka', '') == sec_m])
-            
+            secim = st.selectbox("Şablon Seç", [k for k,v in f_sablonlar.items() if v['kimlik'].get('marka', '') == sec_m])
             t_str = st.date_input("Tarih").strftime('%d.%m.%Y')
             tx = st.text_area("Şasiler (Alt alta)")
+            
             if st.button("🚀 Üret") and tx:
                 buf = io.BytesIO()
                 with zipfile.ZipFile(buf, "w") as zf:
                     for v in [x.strip() for x in tx.split('\n') if x.strip()]:
                         pdf = pdf_olustur(v, sablonlar[secim], t_str)
-                        zf.writestr(f"{v}.pdf", bytes(pdf.output(dest='S')))
-                st.download_button("İndir", buf.getvalue(), "coc_paket.zip")
+                        # HATA DÜZELTME: PDF verisi encode edilerek byte formatına çevrildi
+                        pdf_data = pdf.output(dest='S').encode('latin-1')
+                        zf.writestr(f"{v}.pdf", pdf_data)
+                st.download_button("📦 Paketi İndir", buf.getvalue(), "coc_paket.zip", "application/zip")
         else: st.warning("Eşleşen şablon bulunamadı.")
+    else: st.info("Henüz şablon oluşturulmamış.")
 
+# --- ŞABLON YÖNETİMİ ---
+elif menu == "📝 Şablon Yönetimi":
+    st.header("🛠️ Şablon Yönetimi")
+    tab1, tab2 = st.tabs(["📂 Düzenle", "🆕 Yeni Şablon"])
+    with tab1:
+        s_all = sablonlari_yukle()
+        if s_all:
+            q = st.text_input("🔍 Ara", "").lower()
+            f_s = {k: v for k, v in s_all.items() if q in k.lower() or q in v['kimlik'].get('marka', '').lower()}
+            if f_s:
+                s_sec = st.selectbox("Şablon Seçin", list(f_s.keys()))
+                if st.button("📂 Yükle"):
+                    st.session_state.current_df = pd.DataFrame(s_all[s_sec]["teknik"])
+                    st.session_state.marka = s_all[s_sec]["kimlik"].get("marka", "")
+                    st.session_state.s_ad = yeni_versiyon_adi_bul(s_sec); st.rerun()
+                if st.button("🗑️ Sil", type="primary"):
+                    if sablon_sil(s_sec): st.success("Silindi"); st.rerun()
+    with tab2:
+        upl = st.file_uploader("Excel/CSV", type=["xlsx", "csv"])
+        if upl:
+            st.session_state.current_df = pd.read_excel(upl) if upl.name.endswith('.xlsx') else pd.read_csv(upl)
+            st.success("Veri Alındı")
+
+    st.divider()
+    c_a, c_b = st.columns(2)
+    s_ad = c_a.text_input("Şablon İsmi", value=st.session_state.get('s_ad', ''))
+    marka = c_b.text_input("Marka Adı", value=st.session_state.get('marka', ''))
+    taahut = st.text_area("Taahhüt Metni", value=VARSAYILAN_TAAHHUT_METNI)
+    aciklama = st.text_area("Yasal Metin", value=VARSAYILAN_ACIKLAMA_METNI)
+    final_df = st.data_editor(st.session_state.current_df, num_rows="dynamic", use_container_width=True)
+    if st.button("💾 Kaydet") and s_ad and marka:
+        sablon_kaydet(s_ad, {"marka": marka, "taahut": taahut, "aciklama": aciklama, "yer": "Ankara"}, final_df)
+        st.success("Kaydedildi")
+
+# --- AYARLAR ---
 elif menu == "⚙️ Logo & İmza Ayarları":
-    # (Önceki logo/imza kodları sabit)
-    pass
+    st.header("⚙️ Logo ve İmza")
+    c1, c2 = st.columns(2)
+    with c1:
+        if os.path.exists(IMZA_DOSYASI): st.image(IMZA_DOSYASI, width=150)
+        sig = st.file_uploader("İmza (PNG)", type=["png"])
+        if st.button("İmzayı Güncelle") and sig: Image.open(sig).save(IMZA_DOSYASI, "PNG"); st.rerun()
+    with c2:
+        m_l = st.text_input("Marka Adı (Logo için)")
+        lg = st.file_uploader("Logo (PNG)", type=["png"])
+        if st.button("Logoyu Kaydet") and lg and m_l:
+            Image.open(lg).save(os.path.join(LOGO_KLASORU, f"{m_l.strip()}.png"), "PNG"); st.rerun()
