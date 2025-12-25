@@ -44,9 +44,7 @@ def yeni_versiyon_adi_bul(temel_ad):
 
 def sablon_kaydet(isim, kimlik_verisi, teknik_df):
     mevcut = sablonlari_yukle()
-    if not teknik_df.empty:
-        teknik_df["Sıra"] = pd.to_numeric(teknik_df["Sıra"], errors='coerce').fillna(999)
-        teknik_df = teknik_df.sort_values(by="Sıra").reset_index(drop=True)
+    # SIRALAMAYI BOZMA: Olduğu gibi kaydet
     mevcut[isim] = {"kimlik": kimlik_verisi, "teknik": teknik_df.to_dict(orient="records")}
     with open(SABLON_DOSYASI, "w", encoding="utf-8") as f:
         json.dump(mevcut, f, ensure_ascii=False, indent=4)
@@ -75,15 +73,15 @@ def pdf_olustur(vin, veri, manuel_tarih_str=None):
 
     def text_safe(txt):
         if txt is None or str(txt).lower() in ['none', 'nan']: return ""
-        # PDF hata vermemesi için Türkçe karakterleri eşleştiriyoruz
+        # Sadece hata veren kritik karakterleri değiştir, düzeni bozma
         tr_map = str.maketrans("İıĞğŞşÜüÖöÇç", "IiGgSsUuOoCc")
         return str(txt).translate(tr_map)
 
     pdf.add_page()
     pdf.set_auto_page_break(auto=False)
     kimlik = veri.get("kimlik", {})
-    maddeler = sorted([dict(m) for m in veri.get("teknik", [])],
-                      key=lambda x: pd.to_numeric(str(x.get("Sıra", 999)).replace(',', '.'), errors='coerce'))
+    # SIRALAMAYI KORU: teknik içindeki liste sırasına dokunma
+    maddeler = veri.get("teknik", [])
     
     aciklama_metni = kimlik.get("aciklama", VARSAYILAN_ACIKLAMA_METNI)
     taahut_metni = kimlik.get("taahut", VARSAYILAN_TAAHHUT_METNI)
@@ -115,7 +113,8 @@ def pdf_olustur(vin, veri, manuel_tarih_str=None):
         
         pdf.set_font(ana_font, "B", fs)
         curr_y = pdf.get_y()
-        if curr_y > 190 and x_pos == 10:
+        # Sayfa sonu kontrolü
+        if curr_y > 188 and x_pos == 10:
             x_pos = 155; pdf.set_y(header_end_y); curr_y = header_end_y
 
         pdf.set_xy(x_pos, curr_y); pdf.cell(14, base_h, t_kod)
@@ -131,15 +130,15 @@ def pdf_olustur(vin, veri, manuel_tarih_str=None):
             pdf.set_xy(x_pos, imza_y + 10); pdf.cell(85, 5, f"Yer: {yer_bilgisi} | Tarih: {tarih_bilgisi}")
             pdf.set_y(imza_y + 25); v_done = True
 
-    pdf.line(152, header_end_y, 152, 200)
+    pdf.line(152, 25, 152, 200)
     # Çözüm: Bytes dönüşümü ve Latin-1 kodlaması
     return pdf.output(dest='S').encode('latin-1')
 
-# --- ARAYÜZ (Senin Temiz Kodun) ---
+# --- ARAYÜZ ---
 st.set_page_config(page_title="Vianext AutoCOC Pro", layout="wide")
-if os.path.exists(SIRKET_LOGOSU): st.sidebar.image(SIRKET_LOGOSU, use_container_width=True)
 
-if 'current_df' not in st.session_state: st.session_state.current_df = pd.DataFrame(columns=["Sıra", "Kod", "Özellik Adı", "Değer"])
+if 'current_df' not in st.session_state: 
+    st.session_state.current_df = pd.DataFrame(columns=["Sıra", "Kod", "Özellik Adı", "Değer"])
 
 menu = st.sidebar.radio("Menü", ["🏠 Ana Sayfa", "🏭 Belge Üretimi", "📝 Şablon Yönetimi", "⚙️ Logo & İmza Ayarları"])
 
@@ -158,8 +157,6 @@ if menu == "🏠 Ana Sayfa":
         g_cols = st.columns(4)
         for i, (m_ad, s_sayisi) in enumerate(marka_datalar.items()):
             with g_cols[i % 4]:
-                logo_p = os.path.join(LOGO_KLASORU, f"{m_ad}.png")
-                if os.path.exists(logo_p): st.image(logo_p, width=100)
                 st.write(f"**{m_ad}** ({s_sayisi} Şablon)")
 
 elif menu == "📝 Şablon Yönetimi":
@@ -172,9 +169,9 @@ elif menu == "📝 Şablon Yönetimi":
             filtered_templates = {k: v for k, v in s_all.items() if search_query in k.lower() or search_query in v['kimlik'].get('marka', '').lower()}
             if filtered_templates:
                 marka_listesi = sorted(list(set(v['kimlik'].get('marka', '') for v in filtered_templates.values())))
-                m_sec = st.selectbox("1. Marka Filtresi", marka_listesi)
+                m_sec = st.selectbox("Marka Filtresi", marka_listesi)
                 final_options = [k for k, v in filtered_templates.items() if v['kimlik'].get('marka', '') == m_sec]
-                s_sec = st.selectbox("2. Şablon Seç", final_options)
+                s_sec = st.selectbox("Şablon Seç", final_options)
                 if st.button("📂 Yükle"):
                     st.session_state.current_df = pd.DataFrame(s_all[s_sec]["teknik"])
                     st.session_state.marka = s_all[s_sec]["kimlik"].get("marka", "")
@@ -184,15 +181,15 @@ elif menu == "📝 Şablon Yönetimi":
 
     with tab2:
         st.subheader("Yeni Şablon Girişi")
-        yuklenen_dosya = st.file_uploader("Excel/CSV Yükle", type=["xlsx", "csv"])
-        if yuklenen_dosya:
-            st.session_state.current_df = pd.read_excel(yuklenen_dosya) if yuklenen_dosya.name.endswith('.xlsx') else pd.read_csv(yuklenen_dosya)
+        upl = st.file_uploader("Excel/CSV Yükle", type=["xlsx", "csv"])
+        if upl:
+            st.session_state.current_df = pd.read_excel(upl) if upl.name.endswith('.xlsx') else pd.read_csv(upl)
             st.success("Yüklendi!")
 
     st.divider()
-    col_a, col_b = st.columns(2)
-    s_ad = col_a.text_input("Şablon İsmi", value=st.session_state.get('s_ad', ''))
-    marka = col_b.text_input("Marka Adı", value=st.session_state.get('marka', ''))
+    c_a, c_b = st.columns(2)
+    s_ad = c_a.text_input("Şablon İsmi", value=st.session_state.get('s_ad', ''))
+    marka = c_b.text_input("Marka Adı", value=st.session_state.get('marka', ''))
     final_df = st.data_editor(st.session_state.current_df, num_rows="dynamic", use_container_width=True)
     if st.button("💾 Kaydet"):
         if s_ad and marka:
@@ -203,27 +200,17 @@ elif menu == "🏭 Belge Üretimi":
     st.header("🖨️ PDF Üretim Merkezi")
     sablonlar = sablonlari_yukle()
     if sablonlar:
-        prod_search = st.text_input("🔍 Şablon Ara", "").lower()
-        filtered_prod = {k: v for k, v in sablonlar.items() if prod_search in k.lower() or prod_search in v['kimlik'].get('marka', '').lower()}
-        if filtered_prod:
-            m_list = sorted(list(set(v['kimlik'].get('marka', '') for v in filtered_prod.values())))
-            sec_m = st.selectbox("Marka Seç", m_list)
-            secim = st.selectbox("Şablon Seç", [k for k,v in filtered_prod.items() if v['kimlik'].get('marka', '') == sec_m])
-            t_str = st.date_input("Tarih").strftime('%d.%m.%Y')
+        p_search = st.text_input("🔍 Şablon Ara", "").lower()
+        f_prod = {k: v for k, v in sablonlar.items() if p_search in k.lower() or p_search in v['kimlik'].get('marka', '').lower()}
+        if f_prod:
+            m_list = sorted(list(set(v['kimlik'].get('marka', '') for v in f_prod.values())))
+            sec_m = st.selectbox("Marka", m_list)
+            secim = st.selectbox("Şablon", [k for k,v in f_prod.items() if v['kimlik'].get('marka', '') == sec_m])
             tx = st.text_area("Şasiler (Alt alta)")
             if st.button("🚀 Üret") and tx:
                 buf = io.BytesIO()
                 with zipfile.ZipFile(buf, "w") as zf:
                     for v in [x.strip() for x in tx.split('\n') if x.strip()]:
-                        # pdf_olustur artık encode edilmiş bytes döndürüyor
-                        pdf_data = pdf_olustur(v, sablonlar[secim], t_str)
+                        pdf_data = pdf_olustur(v, sablonlar[secim])
                         zf.writestr(f"{v}.pdf", pdf_data)
-                st.download_button("İndir", buf.getvalue(), "coc_paket.zip")
-
-elif menu == "⚙️ Logo & İmza Ayarları":
-    st.header("⚙️ Logo & İmza")
-    m_l = st.text_input("Marka Adı")
-    lg = st.file_uploader("Logo", type=["png"])
-    if st.button("Kaydet") and lg and m_l:
-        Image.open(lg).save(os.path.join(LOGO_KLASORU, f"{m_l.strip()}.png"), "PNG")
-        st.success("Kaydedildi")
+                st.download_button("📦 İndir", buf.getvalue(), "coc_paket.zip")
