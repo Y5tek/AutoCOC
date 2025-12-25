@@ -1,0 +1,1418 @@
+{
+    "YAMAHA -DE14-A-01-WR125-A-02533/00": {
+        "kimlik": {
+            "marka": "YAMAHA",
+            "taahut": "Asagida imzasi bulunan Özgü ÖZ Firma Yetkili Makine Mühendisi olup,Is bu belge ile Olivier Prévost tarafindan imzalanan orijinal COC belgesinin cevirisini onaylarim.",
+            "aciklama": "02.05.2025 Tarihinde düzenlenen e13*168/2013*02533*00 sayılı AB Tip Onayında tarif edilen tipe tam anlamıyla uygundur ve sağ/sol taraftan akan trafiğe sahip olan ve hız göstergelerinde metrik/İngiliz birim sistemini kullanan ülkelerde kalıcı olarak tescil edilebilir.",
+            "yer": "Schiphol /Rijk, Hollanda"
+        },
+        "teknik": [
+            {
+                "Kod": "0.1.",
+                "Özellik Adı": "Markası",
+                "Değer": "YAMAHA",
+                "Sıra": 2.0
+            },
+            {
+                "Kod": "0.2.",
+                "Özellik Adı": "Tipi",
+                "Değer": "DE14",
+                "Sıra": 3.0
+            },
+            {
+                "Kod": "0.2.1.",
+                "Özellik Adı": "Varyant",
+                "Değer": "A              ",
+                "Sıra": 4.0
+            },
+            {
+                "Kod": "0.2.2.2.",
+                "Özellik Adı": "Versiyon",
+                "Değer": "01            ",
+                "Sıra": 5.0
+            },
+            {
+                "Kod": "0.2.3.",
+                "Özellik Adı": "Ticari adı (adları)",
+                "Değer": "WR125-A",
+                "Sıra": 6.0
+            },
+            {
+                "Kod": "0.3.",
+                "Özellik Adı": "Aracın Kategorisi",
+                "Değer": "L3e-A1",
+                "Sıra": 7.0
+            },
+            {
+                "Kod": "0.4.",
+                "Özellik Adı": "Üretici Firma Adı",
+                "Değer": "PT. Yamaha Indonesia Motor Manufacturing ",
+                "Sıra": 8.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "Üretici Firma Adresi",
+                "Değer": "JL. DR.KRT.RADJIMAN WIDYODININGRAT, \nRT.009/RW.06 KEL RAWA TERATE KEC. CAKUNG JAKARTA TIMUR, INDONESIA",
+                "Sıra": 9.0
+            },
+            {
+                "Kod": "0.4.2.",
+                "Özellik Adı": "Üretici firmanın yetkili temsilcisinin adı ve adresi",
+                "Değer": "Yamaha Motor Europe N.V, Koolhovenlaan 101, 1119NC, Schiphol-Rijk, The Netherlands",
+                "Sıra": 10.0
+            },
+            {
+                "Kod": "0.5.1.",
+                "Özellik Adı": "Üretici firmanın Yasal olarak zorunlu plakasının yeri",
+                "Değer": "L, x=493, y=73, z=912",
+                "Sıra": 11.0
+            },
+            {
+                "Kod": "0.5.2.",
+                "Özellik Adı": "Yasal olarak zorunlu plakasının iliştirilme metodu ",
+                "Değer": "Yapıştırma",
+                "Sıra": 12.0
+            },
+            {
+                "Kod": "0.6.",
+                "Özellik Adı": "Araç tanıtım numarasının yeri ",
+                "Değer": "R, x=379 y=16 z=961",
+                "Sıra": 13.0
+            },
+            {
+                "Kod": "1.",
+                "Özellik Adı": "Araç tanıtım numarası",
+                "Değer": "",
+                "Sıra": 14.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": null,
+                "Değer": null,
+                "Sıra": 14.1
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "GENEL YAPIM ÖZELLİKLERİ",
+                "Değer": null,
+                "Sıra": 14.5
+            },
+            {
+                "Kod": "1.3",
+                "Özellik Adı": "Dingil/Tekerlek Sayısı",
+                "Değer": "2 Dingil, 2 Tekerlek",
+                "Sıra": 15.0
+            },
+            {
+                "Kod": "1.3.2.",
+                "Özellik Adı": "Tahrik Edilen Dingil",
+                "Değer": "Arka Dingil",
+                "Sıra": 16.0
+            },
+            {
+                "Kod": "6.2.4.",
+                "Özellik Adı": "Gelişmiş fren sistemi:ABS/CBS/ABS ve CBS /",
+                "Değer": "ABS",
+                "Sıra": 17.0
+            },
+            {
+                "Kod": "2.2.1.",
+                "Özellik Adı": "Uzunluk",
+                "Değer": "2160 mm",
+                "Sıra": 18.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "ANA BOYUTLAR",
+                "Değer": null,
+                "Sıra": 18.0
+            },
+            {
+                "Kod": "2.2.2.",
+                "Özellik Adı": "Genişlik",
+                "Değer": "840 mm",
+                "Sıra": 19.0
+            },
+            {
+                "Kod": "2.2.3.",
+                "Özellik Adı": "Yükseklik",
+                "Değer": "1195 mm ",
+                "Sıra": 20.0
+            },
+            {
+                "Kod": "2.2.4.",
+                "Özellik Adı": "Dingil Mesafesi",
+                "Değer": "1430 mm",
+                "Sıra": 21.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "KÜTLELER",
+                "Değer": null,
+                "Sıra": 22.0
+            },
+            {
+                "Kod": "2.1.1.",
+                "Özellik Adı": "Yürür Vaziyette Kütlesi",
+                "Değer": "138 kg",
+                "Sıra": 22.0
+            },
+            {
+                "Kod": "2.1.2.",
+                "Özellik Adı": "Gerçek Kütle",
+                "Değer": "213 kg",
+                "Sıra": 23.0
+            },
+            {
+                "Kod": "2.1.3.",
+                "Özellik Adı": "Teknik olarak müsaade edilen maksimum yüklü kütle",
+                "Değer": "298 kg",
+                "Sıra": 24.0
+            },
+            {
+                "Kod": "2.1.3.1.",
+                "Özellik Adı": "Ön dingil için teknik olarak müsaade edilen maksimum kütle",
+                "Değer": "104 kg",
+                "Sıra": 25.0
+            },
+            {
+                "Kod": "2.1.3.2.",
+                "Özellik Adı": "Arka dingil için teknik olarak müsaade edilen maksimum kütle",
+                "Değer": "194 kg",
+                "Sıra": 26.0
+            },
+            {
+                "Kod": "3.1.1.1.",
+                "Özellik Adı": "Üretici",
+                "Değer": "YAMAHA Motor Co.,Ltd.",
+                "Sıra": 27.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "GÜÇ AKTARMA ORGANI",
+                "Değer": null,
+                "Sıra": 27.0
+            },
+            {
+                "Kod": "3.1.1.2.",
+                "Özellik Adı": "Motor Kodu",
+                "Değer": "E35ME",
+                "Sıra": 28.0
+            },
+            {
+                "Kod": "3.2.1.2.",
+                "Özellik Adı": "Çalışma Prensibi",
+                "Değer": "İçten yanmalı motor (ICE) / Pozitif ateşlemeli",
+                "Sıra": 29.0
+            },
+            {
+                "Kod": "3.2.1.4.1.",
+                "Özellik Adı": "Silindir Sayısı",
+                "Değer": "1",
+                "Sıra": 30.0
+            },
+            {
+                "Kod": "3.2.1.4.2.",
+                "Özellik Adı": "Silindirlerin düzeni(LI/V/O/S",
+                "Değer": "S",
+                "Sıra": 31.0
+            },
+            {
+                "Kod": "3.2.1.5.",
+                "Özellik Adı": "Motor Hacmi",
+                "Değer": "125 cm3",
+                "Sıra": 32.0
+            },
+            {
+                "Kod": "1.9.",
+                "Özellik Adı": "Azami Net Güç",
+                "Değer": "10.7 kW (at 10000 min-1) ",
+                "Sıra": 33.0
+            },
+            {
+                "Kod": "1.10.",
+                "Özellik Adı": " Maksimum net güç/aracın çalışır durumda kütlesi ",
+                "Değer": "0,08 kW/kg ",
+                "Sıra": 34.0
+            },
+            {
+                "Kod": "3.2.3.1.",
+                "Özellik Adı": "Yakıt Türü",
+                "Değer": "P (Benzin)",
+                "Sıra": 35.0
+            },
+            {
+                "Kod": "3.2.3.2.",
+                "Özellik Adı": "Araç yakıt kombinasyonu : (Tek yakıt/ İki yakıtlı / Değişken yakıtlı",
+                "Değer": "Tek yakıtlı",
+                "Sıra": 36.0
+            },
+            {
+                "Kod": "3.2.3.2.1.",
+                "Özellik Adı": "Yakıtta kabul edilebilir maksimum biyoyakıt miktarı",
+                "Değer": "%10 hacimce",
+                "Sıra": 36.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "MAKSİMUM HIZ",
+                "Değer": null,
+                "Sıra": 37.0
+            },
+            {
+                "Kod": "1.8.",
+                "Özellik Adı": "Aracın maksimum hızı",
+                "Değer": "104 km/sa (CV*:154 km/h)",
+                "Sıra": 37.1
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "SÜRÜCÜ-KATAR VE KONTROLÜ",
+                "Değer": null,
+                "Sıra": 37.5
+            },
+            {
+                "Kod": "3.5.3.9.",
+                "Özellik Adı": "Transmisyon Tipi",
+                "Değer": "Manuel",
+                "Sıra": 38.0
+            },
+            {
+                "Kod": "3.5.4.",
+                "Özellik Adı": "Vites Oranları",
+                "Değer": "1. 8.618, 2. 5.703, 3. 4.148, \n   4. 3.476, 5. 2.909, 6. 2.555",
+                "Sıra": 39.0
+            },
+            {
+                "Kod": "3.5.4.1.",
+                "Özellik Adı": "Son Vites Oranı",
+                "Değer": "4.214 (59/14)",
+                "Sıra": 40.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "LASTİK ÖLÇÜLERİ",
+                "Değer": null,
+                "Sıra": 40.5
+            },
+            {
+                "Kod": "6.18.1.1.",
+                "Özellik Adı": "Lastik Ölçüleri (1. Dingil)",
+                "Değer": "2.75-21 45P, 150 kPa, 21 x 1.6",
+                "Sıra": 41.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "Lastik Ölçüleri (2. Dingil)",
+                "Değer": "4.10-18 59P, 170 kPa, 18 x 2.15",
+                "Sıra": 42.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "GÖVDE",
+                "Değer": null,
+                "Sıra": 43.0
+            },
+            {
+                "Kod": "6.16.1.",
+                "Özellik Adı": "Koltuk sayısı ve pozisyonu ",
+                "Değer": "2",
+                "Sıra": 44.0
+            },
+            {
+                "Kod": "6.16.1.1.",
+                "Özellik Adı": "Konumları ve düzenleri",
+                "Değer": "r1:1C   r2:1C",
+                "Sıra": 45.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "ÇEVRESEL PERFORMANS",
+                "Değer": null,
+                "Sıra": 45.5
+            },
+            {
+                "Kod": "4.0.1.",
+                "Özellik Adı": "Çevre Standardı",
+                "Değer": "EURO 5+",
+                "Sıra": 46.0
+            },
+            {
+                "Kod": "4.0.6.",
+                "Özellik Adı": "Ses düzeyi",
+                "Değer": "R41-05 (UNECE)",
+                "Sıra": 47.0
+            },
+            {
+                "Kod": "4.0.6.1.",
+                "Özellik Adı": "Dururken",
+                "Değer": "80 dB(A) , 5000 min-1",
+                "Sıra": 48.0
+            },
+            {
+                "Kod": "4.0.6.2.",
+                "Özellik Adı": "Sürüş Halinde",
+                "Değer": "74 dB(A)",
+                "Sıra": 49.0
+            },
+            {
+                "Kod": "4.0.6.3.",
+                "Özellik Adı": "Şehir içi için limit değer",
+                "Değer": "74 dB(A)",
+                "Sıra": 50.0
+            },
+            {
+                "Kod": "3.2.15.",
+                "Özellik Adı": "Egzoz Emisyon Yönetmeliği",
+                "Değer": "EU) 134/2014 değiş. (EU) 2023/2724",
+                "Sıra": 51.0
+            },
+            {
+                "Kod": "3.2.15.1",
+                "Özellik Adı": "3.2.15.1. Tip 1 testi: Bozulma faktörü de dahil olmak üzere soğuk çalıştırmadan sonra egzoz borusu emisyonları",
+                "Değer": "",
+                "Sıra": 51.1
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "Tip I Testi (CO)",
+                "Değer": "179 mg/km ",
+                "Sıra": 52.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "Tip I Testi (THC)",
+                "Değer": "66 mg/km ",
+                "Sıra": 53.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "Tip I Testi (NOx)",
+                "Değer": "16 mg/km ",
+                "Sıra": 54.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "Tip I Testi (NMHC)",
+                "Değer": "59 mg/km ",
+                "Sıra": 54.1
+            },
+            {
+                "Kod": "3.2.15.2",
+                "Özellik Adı": "3.2.15.2. Tip II Testi : Yüksek rölanti / serbest ivmede egzoz emisyonları",
+                "Değer": null,
+                "Sıra": 55.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "(HC Normal)",
+                "Değer": "31 ppm normal rolanti devrinde",
+                "Sıra": 56.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "(HC Yüksek)",
+                "Değer": "28 ppm yüksek rolanti devrinde",
+                "Sıra": 57.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "(CO Normal)",
+                "Değer": "0.5 % yogunluk normal rolanti devrinde",
+                "Sıra": 58.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "(CO Yüksek)",
+                "Değer": "0.3 % yogunluk yüksek rolanti devrinde",
+                "Sıra": 59.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "ENERJİ VERİMLİLİĞİ",
+                "Değer": null,
+                "Sıra": 59.1
+            },
+            {
+                "Kod": "4.0.2.",
+                "Özellik Adı": "Yakıt Tüketimi",
+                "Değer": "2.3 lt/100 km",
+                "Sıra": 60.0
+            },
+            {
+                "Kod": "4.0.3.",
+                "Özellik Adı": "CO2 Emisyonları",
+                "Değer": "55 g/km ",
+                "Sıra": 61.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "EK AÇIKLAMALAR",
+                "Değer": null,
+                "Sıra": 63.0
+            },
+            {
+                "Kod": "9.1.",
+                "Özellik Adı": "Notlar",
+                "Değer": "Mali Güç  F(07) I(10)",
+                "Sıra": 998.0
+            },
+            {
+                "Kod": "9.2.",
+                "Özellik Adı": "Muafiyetler",
+                "Değer": "-",
+                "Sıra": 999.0
+            }
+        ]
+    },
+    "YAMAHA -SGA7-A-02-CZD250D-02439/00": {
+        "kimlik": {
+            "marka": "YAMAHA",
+            "taahut": "Asagida imzasi bulunan Özgü ÖZ Firma Yetkili Makine Mühendisi olup,Is bu belge ile Olivier Prévost tarafindan imzalanan orijinal COC belgesinin cevirisini onaylarim.",
+            "aciklama": "18.12.2024 Tarihinde düzenlenen e13*168/2013*02439*00 sayılı AB Tip Onayında tarif edilen tipe tam anlamıyla uygundur ve sağ/sol taraftan akan trafiğe sahip olan ve hız göstergelerinde metrik/İngiliz birim sistemini kullanan ülkelerde kalıcı olarak tescil edilebilir.",
+            "yer": "Schiphol /Rijk, Hollanda"
+        },
+        "teknik": [
+            {
+                "Kod": "0.1.",
+                "Özellik Adı": "Markası",
+                "Değer": "YAMAHA",
+                "Sıra": 2.0
+            },
+            {
+                "Kod": "0.2.",
+                "Özellik Adı": "Tipi",
+                "Değer": "SGA7",
+                "Sıra": 3.0
+            },
+            {
+                "Kod": "0.2.1.",
+                "Özellik Adı": "Varyant",
+                "Değer": "A              ",
+                "Sıra": 4.0
+            },
+            {
+                "Kod": "0.2.2.2.",
+                "Özellik Adı": "Versiyon",
+                "Değer": "02",
+                "Sıra": 5.0
+            },
+            {
+                "Kod": "0.2.3.",
+                "Özellik Adı": "Ticari adı (adları)",
+                "Değer": "CZD250D-A",
+                "Sıra": 6.0
+            },
+            {
+                "Kod": "0.3.",
+                "Özellik Adı": "Aracın Kategorisi",
+                "Değer": "L3e-A2",
+                "Sıra": 7.0
+            },
+            {
+                "Kod": "0.4.",
+                "Özellik Adı": "Üretici Firma Adı",
+                "Değer": "YAMAHA MOTOR MANUFACTURING EUROPE",
+                "Sıra": 8.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "Üretici Firma Adresi",
+                "Değer": "Z.I. de Rouvroy 02100, France",
+                "Sıra": 9.0
+            },
+            {
+                "Kod": "0.4.2.",
+                "Özellik Adı": "Üretici firmanın yetkili temsilcisinin adı ve adresi",
+                "Değer": "Yamaha Motor Europe N.V, Koolhovenlaan 101, 1119NC, Schiphol-Rijk, The Netherlands",
+                "Sıra": 10.0
+            },
+            {
+                "Kod": "0.5.1.",
+                "Özellik Adı": "Üretici firmanın Yasal olarak zorunlu plakasının yeri",
+                "Değer": "R, x=297, y=23, z=630",
+                "Sıra": 11.0
+            },
+            {
+                "Kod": "0.5.2.",
+                "Özellik Adı": "Yasal olarak zorunlu plakasının iliştirilme metodu ",
+                "Değer": "Yapıştırma",
+                "Sıra": 12.0
+            },
+            {
+                "Kod": "0.6.",
+                "Özellik Adı": "Araç tanıtım numarasının yeri ",
+                "Değer": "R, x=1593 y=51 z=853",
+                "Sıra": 13.0
+            },
+            {
+                "Kod": "1.",
+                "Özellik Adı": "Araç tanıtım numarası",
+                "Değer": "",
+                "Sıra": 14.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": null,
+                "Değer": null,
+                "Sıra": 14.1
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "GENEL YAPIM ÖZELLİKLERİ",
+                "Değer": null,
+                "Sıra": 14.5
+            },
+            {
+                "Kod": "1.3",
+                "Özellik Adı": "Dingil/Tekerlek Sayısı",
+                "Değer": "2 Dingil, 2 Tekerlek",
+                "Sıra": 15.0
+            },
+            {
+                "Kod": "1.3.2.",
+                "Özellik Adı": "Tahrik Edilen Dingil",
+                "Değer": "Arka Dingil",
+                "Sıra": 16.0
+            },
+            {
+                "Kod": "6.2.4.",
+                "Özellik Adı": "Gelişmiş fren sistemi:ABS/CBS/ABS ve CBS /",
+                "Değer": "ABS",
+                "Sıra": 17.0
+            },
+            {
+                "Kod": "2.2.1.",
+                "Özellik Adı": "Uzunluk",
+                "Değer": "2180 mm",
+                "Sıra": 18.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "ANA BOYUTLAR",
+                "Değer": null,
+                "Sıra": 18.0
+            },
+            {
+                "Kod": "2.2.2.",
+                "Özellik Adı": "Genişlik",
+                "Değer": "800 mm",
+                "Sıra": 19.0
+            },
+            {
+                "Kod": "2.2.3.",
+                "Özellik Adı": "Yükseklik",
+                "Değer": "1505 mm ",
+                "Sıra": 20.0
+            },
+            {
+                "Kod": "2.2.4.",
+                "Özellik Adı": "Dingil Mesafesi",
+                "Değer": "1540 mm",
+                "Sıra": 21.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "KÜTLELER",
+                "Değer": null,
+                "Sıra": 22.0
+            },
+            {
+                "Kod": "2.1.1.",
+                "Özellik Adı": "Yürür Vaziyette Kütlesi",
+                "Değer": "186 kg",
+                "Sıra": 22.0
+            },
+            {
+                "Kod": "2.1.2.",
+                "Özellik Adı": "Gerçek Kütle",
+                "Değer": "261 kg",
+                "Sıra": 23.0
+            },
+            {
+                "Kod": "2.1.3.",
+                "Özellik Adı": "Teknik olarak müsaade edilen maksimum yüklü kütle",
+                "Değer": "350 kg",
+                "Sıra": 24.0
+            },
+            {
+                "Kod": "2.1.3.1.",
+                "Özellik Adı": "Ön dingil için teknik olarak müsaade edilen maksimum kütle",
+                "Değer": "127 kg",
+                "Sıra": 25.0
+            },
+            {
+                "Kod": "2.1.3.2.",
+                "Özellik Adı": "Arka dingil için teknik olarak müsaade edilen maksimum kütle",
+                "Değer": "223 kg",
+                "Sıra": 26.0
+            },
+            {
+                "Kod": "3.1.1.1.",
+                "Özellik Adı": "Üretici",
+                "Değer": "YAMAHA Motor Co.,Ltd.",
+                "Sıra": 27.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "GÜÇ AKTARMA ORGANI",
+                "Değer": null,
+                "Sıra": 27.0
+            },
+            {
+                "Kod": "3.1.1.2.",
+                "Özellik Adı": "Motor Kodu",
+                "Değer": "G3X1E",
+                "Sıra": 28.0
+            },
+            {
+                "Kod": "3.2.1.2.",
+                "Özellik Adı": "Çalışma Prensibi",
+                "Değer": "İçten yanmalı motor (ICE) / Pozitif ateşlemeli",
+                "Sıra": 29.0
+            },
+            {
+                "Kod": "3.2.1.4.1.",
+                "Özellik Adı": "Silindir Sayısı",
+                "Değer": "1",
+                "Sıra": 30.0
+            },
+            {
+                "Kod": "3.2.1.4.2.",
+                "Özellik Adı": "Silindirlerin düzeni(LI/V/O/S",
+                "Değer": "S",
+                "Sıra": 31.0
+            },
+            {
+                "Kod": "3.2.1.5.",
+                "Özellik Adı": "Motor Hacmi",
+                "Değer": "250 cm3",
+                "Sıra": 32.0
+            },
+            {
+                "Kod": "1.9.",
+                "Özellik Adı": "Azami Net Güç",
+                "Değer": "16.7 kW (at 7000 min-1) ",
+                "Sıra": 33.0
+            },
+            {
+                "Kod": "1.10.",
+                "Özellik Adı": " Maksimum net güç/aracın çalışır durumda kütlesi ",
+                "Değer": "0,09 kW/kg ",
+                "Sıra": 34.0
+            },
+            {
+                "Kod": "3.2.3.1.",
+                "Özellik Adı": "Yakıt Türü",
+                "Değer": "P (Benzin)",
+                "Sıra": 35.0
+            },
+            {
+                "Kod": "3.2.3.2.",
+                "Özellik Adı": "Araç yakıt kombinasyonu : (Tek yakıt/ İki yakıtlı / Değişken yakıtlı",
+                "Değer": "Tek yakıtlı",
+                "Sıra": 36.0
+            },
+            {
+                "Kod": "3.2.3.2.1.",
+                "Özellik Adı": "Yakıtta kabul edilebilir maksimum biyoyakıt miktarı",
+                "Değer": "%10 hacimce",
+                "Sıra": 36.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "MAKSİMUM HIZ",
+                "Değer": null,
+                "Sıra": 37.0
+            },
+            {
+                "Kod": "1.8.",
+                "Özellik Adı": "Aracın maksimum hızı",
+                "Değer": "125 km/sa",
+                "Sıra": 37.1
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "SÜRÜCÜ-KATAR VE KONTROLÜ",
+                "Değer": null,
+                "Sıra": 37.5
+            },
+            {
+                "Kod": "3.5.3.9.",
+                "Özellik Adı": "Transmisyon Tipi",
+                "Değer": "C",
+                "Sıra": 38.0
+            },
+            {
+                "Kod": "3.5.4.",
+                "Özellik Adı": "Vites Oranları",
+                "Değer": "1: 0.750,  2:0.750,   3:2.390",
+                "Sıra": 39.0
+            },
+            {
+                "Kod": "3.5.4.1.",
+                "Özellik Adı": "Son Vites Oranı",
+                "Değer": "7.590",
+                "Sıra": 40.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "LASTİK ÖLÇÜLERİ",
+                "Değer": null,
+                "Sıra": 40.5
+            },
+            {
+                "Kod": "6.18.1.1.",
+                "Özellik Adı": "Lastik Ölçüleri (1. Dingil)",
+                "Değer": "120/70-15M/C 56S, 200kPa, J15M/CxMT3.50",
+                "Sıra": 41.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "Lastik Ölçüleri (2. Dingil)",
+                "Değer": "140/70-14M/C 68S, 225kPa, J14M/CxMT4.00",
+                "Sıra": 42.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "GÖVDE",
+                "Değer": null,
+                "Sıra": 43.0
+            },
+            {
+                "Kod": "6.16.1.",
+                "Özellik Adı": "Koltuk sayısı ve pozisyonu ",
+                "Değer": "2",
+                "Sıra": 44.0
+            },
+            {
+                "Kod": "6.16.1.1.",
+                "Özellik Adı": "Konumları ve düzenleri",
+                "Değer": "r1:1C   r2:1C",
+                "Sıra": 45.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "ÇEVRESEL PERFORMANS",
+                "Değer": null,
+                "Sıra": 45.5
+            },
+            {
+                "Kod": "4.0.1.",
+                "Özellik Adı": "Çevre Standardı",
+                "Değer": "EURO 5+",
+                "Sıra": 46.0
+            },
+            {
+                "Kod": "4.0.6.",
+                "Özellik Adı": "Ses düzeyi",
+                "Değer": "R41-05 (UNECE)",
+                "Sıra": 47.0
+            },
+            {
+                "Kod": "4.0.6.1.",
+                "Özellik Adı": "Dururken",
+                "Değer": "83 dB(A) , 3500 min-1",
+                "Sıra": 48.0
+            },
+            {
+                "Kod": "4.0.6.2.",
+                "Özellik Adı": "Sürüş Halinde",
+                "Değer": "74 dB(A)",
+                "Sıra": 49.0
+            },
+            {
+                "Kod": "4.0.6.3.",
+                "Özellik Adı": "Şehir içi için limit değer",
+                "Değer": "77 dB(A)",
+                "Sıra": 50.0
+            },
+            {
+                "Kod": "3.2.15.",
+                "Özellik Adı": "Egzoz Emisyon Yönetmeliği",
+                "Değer": "EU) 134/2014 değiş. (EU) 2023/2724",
+                "Sıra": 51.0
+            },
+            {
+                "Kod": "3.2.15.1",
+                "Özellik Adı": "3.2.15.1. Tip 1 testi: Bozulma faktörü de dahil olmak üzere soğuk çalıştırmadan sonra egzoz borusu emisyonları",
+                "Değer": "",
+                "Sıra": 51.1
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "Tip I Testi (CO)",
+                "Değer": "417 mg/km ",
+                "Sıra": 52.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "Tip I Testi (THC)",
+                "Değer": "58 mg/km ",
+                "Sıra": 53.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "Tip I Testi (NOx)",
+                "Değer": "35 mg/km ",
+                "Sıra": 54.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "Tip I Testi (NMHC)",
+                "Değer": "51 mg/km ",
+                "Sıra": 54.1
+            },
+            {
+                "Kod": "3.2.15.2",
+                "Özellik Adı": "3.2.15.2. Tip II Testi : Yüksek rölanti / serbest ivmede egzoz emisyonları",
+                "Değer": null,
+                "Sıra": 55.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "(HC Normal)",
+                "Değer": "0 ppm normal rolanti devrinde",
+                "Sıra": 56.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "(HC Yüksek)",
+                "Değer": "0 ppm yüksek rolanti devrinde",
+                "Sıra": 57.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "(CO Normal)",
+                "Değer": "0.5 % yogunluk normal rolanti devrinde",
+                "Sıra": 58.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "(CO Yüksek)",
+                "Değer": "0.3 % yogunluk yüksek rolanti devrinde",
+                "Sıra": 59.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "ENERJİ VERİMLİLİĞİ",
+                "Değer": null,
+                "Sıra": 59.1
+            },
+            {
+                "Kod": "4.0.2.",
+                "Özellik Adı": "Yakıt Tüketimi",
+                "Değer": "3.1 lt/100 km",
+                "Sıra": 60.0
+            },
+            {
+                "Kod": "4.0.3.",
+                "Özellik Adı": "CO2 Emisyonları",
+                "Değer": "73 g/km ",
+                "Sıra": 61.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "EK AÇIKLAMALAR",
+                "Değer": null,
+                "Sıra": 63.0
+            },
+            {
+                "Kod": "9.1.",
+                "Özellik Adı": "Notlar",
+                "Değer": "Mali Güç  F(07) I(10)",
+                "Sıra": 998.0
+            },
+            {
+                "Kod": "9.2.",
+                "Özellik Adı": "Muafiyetler",
+                "Değer": "-",
+                "Sıra": 999.0
+            }
+        ]
+    },
+    "YAMAHA -RM57-A-01-MTT690-S-02554/00_CV": {
+        "kimlik": {
+            "marka": "YAMAHA",
+            "taahut": "Asagida imzasi bulunan Özgü ÖZ Firma Yetkili Makine Mühendisi olup,Is bu belge ile Olivier Prévost tarafindan imzalanan orijinal COC belgesinin cevirisini onaylarim.",
+            "aciklama": "22.04.2025 Tarihinde (CV* Tarih: 22.04.2025) düzenlenen e13*168/2013*02554*00 (CV* Tip Onayı: e13*168/2013*02555*00) sayılı AB Tip Onayında tarif edilen tipe tam anlamıyla uygundur ve sağ/sol taraftan akan trafiğe sahip olan ve hız göstergelerinde metrik/İngiliz birim sistemini kullanan ülkelerde kalıcı olarak tescil edilebilir.",
+            "yer": "Schiphol /Rijk, Hollanda"
+        },
+        "teknik": [
+            {
+                "Kod": "0.1.",
+                "Özellik Adı": "Markası",
+                "Değer": "YAMAHA",
+                "Sıra": 2.0
+            },
+            {
+                "Kod": "0.2.",
+                "Özellik Adı": "Tipi",
+                "Değer": "RM57               (CV* Tip) : RM58",
+                "Sıra": 3.0
+            },
+            {
+                "Kod": "0.2.1.",
+                "Özellik Adı": "Varyant",
+                "Değer": "A                      (CV* Varyant) : A",
+                "Sıra": 4.0
+            },
+            {
+                "Kod": "0.2.2.2.",
+                "Özellik Adı": "Versiyon",
+                "Değer": "01                     (CV* Versiyon) : 01",
+                "Sıra": 5.0
+            },
+            {
+                "Kod": "0.2.3.",
+                "Özellik Adı": "Ticari adı (adları)",
+                "Değer": "MTT690-S        (CV* Ticari Ad): MTT690-SU",
+                "Sıra": 6.0
+            },
+            {
+                "Kod": "0.3.",
+                "Özellik Adı": "Aracın Kategorisi",
+                "Değer": "L3e-A3.            (CV* Kategori): L3e-A2",
+                "Sıra": 7.0
+            },
+            {
+                "Kod": "0.4.",
+                "Özellik Adı": "Üretici Firma Adı",
+                "Değer": "YAMAHA MOTOR MANUFACTURING EUROPE ",
+                "Sıra": 8.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "Üretici Firma Adresi",
+                "Değer": "Z.I. de Rouvroy 02100 Rouvroy, France",
+                "Sıra": 9.0
+            },
+            {
+                "Kod": "0.4.2.",
+                "Özellik Adı": "Üretici firmanın yetkili temsilcisinin adı ve adresi",
+                "Değer": "Yamaha Motor Europe N.V, Koolhovenlaan 101, 1119NC, Schiphol-Rijk, The Netherlands",
+                "Sıra": 10.0
+            },
+            {
+                "Kod": "0.5.1.",
+                "Özellik Adı": "Üretici firmanın Yasal olarak zorunlu plakasının yeri",
+                "Değer": "L, x=345, y=115, z=710",
+                "Sıra": 11.0
+            },
+            {
+                "Kod": "0.5.2.",
+                "Özellik Adı": "Yasal olarak zorunlu plakasının iliştirilme metodu ",
+                "Değer": "Yapıştırma",
+                "Sıra": 12.0
+            },
+            {
+                "Kod": "0.6.",
+                "Özellik Adı": "Araç tanıtım numarasının yeri ",
+                "Değer": "R, x=292 y=24 z=848",
+                "Sıra": 13.0
+            },
+            {
+                "Kod": "1.",
+                "Özellik Adı": "Araç tanıtım numarası",
+                "Değer": "",
+                "Sıra": 14.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": null,
+                "Değer": null,
+                "Sıra": 14.1
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "GENEL YAPIM ÖZELLİKLERİ",
+                "Değer": null,
+                "Sıra": 14.5
+            },
+            {
+                "Kod": "1.3",
+                "Özellik Adı": "Dingil/Tekerlek Sayısı",
+                "Değer": "2 Dingil, 2 Tekerlek",
+                "Sıra": 15.0
+            },
+            {
+                "Kod": "1.3.2.",
+                "Özellik Adı": "Tahrik Edilen Dingil",
+                "Değer": "Arka Dingil",
+                "Sıra": 16.0
+            },
+            {
+                "Kod": "6.2.4.",
+                "Özellik Adı": "Gelişmiş fren sistemi:ABS/CBS/ABS ve CBS /",
+                "Değer": "ABS",
+                "Sıra": 17.0
+            },
+            {
+                "Kod": "2.2.1.",
+                "Özellik Adı": "Uzunluk",
+                "Değer": "2135 mm",
+                "Sıra": 18.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "ANA BOYUTLAR",
+                "Değer": null,
+                "Sıra": 18.0
+            },
+            {
+                "Kod": "2.2.2.",
+                "Özellik Adı": "Genişlik",
+                "Değer": "875 mm",
+                "Sıra": 19.0
+            },
+            {
+                "Kod": "2.2.3.",
+                "Özellik Adı": "Yükseklik",
+                "Değer": "1390 mm ",
+                "Sıra": 20.0
+            },
+            {
+                "Kod": "2.2.4.",
+                "Özellik Adı": "Dingil Mesafesi",
+                "Değer": "1495 mm",
+                "Sıra": 21.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "KÜTLELER",
+                "Değer": null,
+                "Sıra": 22.0
+            },
+            {
+                "Kod": "2.1.1.",
+                "Özellik Adı": "Yürür Vaziyette Kütlesi",
+                "Değer": "206 kg",
+                "Sıra": 22.0
+            },
+            {
+                "Kod": "2.1.2.",
+                "Özellik Adı": "Gerçek Kütle",
+                "Değer": "281 kg",
+                "Sıra": 23.0
+            },
+            {
+                "Kod": "2.1.3.",
+                "Özellik Adı": "Teknik olarak müsaade edilen maksimum yüklü kütle",
+                "Değer": "390 kg",
+                "Sıra": 24.0
+            },
+            {
+                "Kod": "2.1.3.1.",
+                "Özellik Adı": "Ön dingil için teknik olarak müsaade edilen maksimum kütle",
+                "Değer": "154 kg",
+                "Sıra": 25.0
+            },
+            {
+                "Kod": "2.1.3.2.",
+                "Özellik Adı": "Arka dingil için teknik olarak müsaade edilen maksimum kütle",
+                "Değer": "236 kg",
+                "Sıra": 26.0
+            },
+            {
+                "Kod": "3.1.1.1.",
+                "Özellik Adı": "Üretici",
+                "Değer": "YAMAHA Motor Co.,Ltd.",
+                "Sıra": 27.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "GÜÇ AKTARMA ORGANI",
+                "Değer": null,
+                "Sıra": 27.0
+            },
+            {
+                "Kod": "3.1.1.2.",
+                "Özellik Adı": "Motor Kodu",
+                "Değer": "M436E",
+                "Sıra": 28.0
+            },
+            {
+                "Kod": "3.2.1.2.",
+                "Özellik Adı": "Çalışma Prensibi",
+                "Değer": "İçten yanmalı motor (ICE) / Pozitif ateşlemeli",
+                "Sıra": 29.0
+            },
+            {
+                "Kod": "3.2.1.4.1.",
+                "Özellik Adı": "Silindir Sayısı",
+                "Değer": "2",
+                "Sıra": 30.0
+            },
+            {
+                "Kod": "3.2.1.4.2.",
+                "Özellik Adı": "Silindirlerin düzeni(LI/V/O/S",
+                "Değer": "LI",
+                "Sıra": 31.0
+            },
+            {
+                "Kod": "3.2.1.5.",
+                "Özellik Adı": "Motor Hacmi",
+                "Değer": "689 cm3",
+                "Sıra": 32.0
+            },
+            {
+                "Kod": "1.9.",
+                "Özellik Adı": "Azami Net Güç",
+                "Değer": "54.0 kW (at 8750 min-1) (CV*:35.0 kW (at 7750 min-1))",
+                "Sıra": 33.0
+            },
+            {
+                "Kod": "1.10.",
+                "Özellik Adı": " Maksimum net güç/aracın çalışır durumda kütlesi ",
+                "Değer": "0,26 kW/kg (CV*: 0.17 kW/kg)",
+                "Sıra": 34.0
+            },
+            {
+                "Kod": "3.2.3.1.",
+                "Özellik Adı": "Yakıt Türü",
+                "Değer": "P (Benzin)",
+                "Sıra": 35.0
+            },
+            {
+                "Kod": "3.2.3.2.",
+                "Özellik Adı": "Araç yakıt kombinasyonu : (Tek yakıt/ İki yakıtlı / Değişken yakıtlı",
+                "Değer": "Tek yakıtlı",
+                "Sıra": 36.0
+            },
+            {
+                "Kod": "3.2.3.2.1.",
+                "Özellik Adı": "Yakıtta kabul edilebilir maksimum biyoyakıt miktarı",
+                "Değer": "%10 hacimce",
+                "Sıra": 36.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "MAKSİMUM HIZ",
+                "Değer": null,
+                "Sıra": 37.0
+            },
+            {
+                "Kod": "1.8.",
+                "Özellik Adı": "Aracın maksimum hızı",
+                "Değer": "188 km/sa (CV*:154 km/h)",
+                "Sıra": 37.1
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "SÜRÜCÜ-KATAR VE KONTROLÜ",
+                "Değer": null,
+                "Sıra": 37.5
+            },
+            {
+                "Kod": "3.5.3.9.",
+                "Özellik Adı": "Transmisyon Tipi",
+                "Değer": "Manuel",
+                "Sıra": 38.0
+            },
+            {
+                "Kod": "3.5.4.",
+                "Özellik Adı": "Vites Oranları",
+                "Değer": "1. 5.479, 2. 4.091, 3. 3.141, \n   4. 2.503, 5. 2.100, 6. 1.856",
+                "Sıra": 39.0
+            },
+            {
+                "Kod": "3.5.4.1.",
+                "Özellik Adı": "Son Vites Oranı",
+                "Değer": "2.688 (43/16)",
+                "Sıra": 40.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "LASTİK ÖLÇÜLERİ",
+                "Değer": null,
+                "Sıra": 40.5
+            },
+            {
+                "Kod": "6.18.1.1.",
+                "Özellik Adı": "Lastik Ölçüleri (1. Dingil)",
+                "Değer": "120/70ZR17 M/C (58W), 250kPa 17M/CxMT3.50",
+                "Sıra": 41.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "Lastik Ölçüleri (2. Dingil)",
+                "Değer": "180/55ZR17 M/C (73W), 290kPa 17M/CxMT5.50",
+                "Sıra": 42.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "GÖVDE",
+                "Değer": null,
+                "Sıra": 43.0
+            },
+            {
+                "Kod": "6.16.1.",
+                "Özellik Adı": "Koltuk sayısı ve pozisyonu ",
+                "Değer": "2",
+                "Sıra": 44.0
+            },
+            {
+                "Kod": "6.16.1.1.",
+                "Özellik Adı": "Konumları ve düzenleri",
+                "Değer": "r1:1C   r2:1C",
+                "Sıra": 45.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "ÇEVRESEL PERFORMANS",
+                "Değer": null,
+                "Sıra": 45.5
+            },
+            {
+                "Kod": "4.0.1.",
+                "Özellik Adı": "Çevre Standardı",
+                "Değer": "EURO 5+",
+                "Sıra": 46.0
+            },
+            {
+                "Kod": "4.0.6.",
+                "Özellik Adı": "Ses düzeyi",
+                "Değer": "R41-05 (UNECE)",
+                "Sıra": 47.0
+            },
+            {
+                "Kod": "4.0.6.1.",
+                "Özellik Adı": "Dururken",
+                "Değer": "89 dB(A) (CV*:87 dB(A)), 4375 min-1 (CV*: 3875 min-1)",
+                "Sıra": 48.0
+            },
+            {
+                "Kod": "4.0.6.2.",
+                "Özellik Adı": "Sürüş Halinde",
+                "Değer": "74 dB(A), (CV*: 73 dB(A))",
+                "Sıra": 49.0
+            },
+            {
+                "Kod": "4.0.6.3.",
+                "Özellik Adı": "Şehir içi için limit değer",
+                "Değer": "77 dB(A), (CV*: 77 dB(A))",
+                "Sıra": 50.0
+            },
+            {
+                "Kod": "3.2.15.",
+                "Özellik Adı": "Egzoz Emisyon Yönetmeliği",
+                "Değer": "EU) 134/2014 değiş. (EU) 2023/2724",
+                "Sıra": 51.0
+            },
+            {
+                "Kod": "3.2.15.1",
+                "Özellik Adı": "3.2.15.1. Tip 1 testi: Bozulma faktörü de dahil olmak üzere soğuk çalıştırmadan sonra egzoz borusu emisyonları",
+                "Değer": "",
+                "Sıra": 51.1
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "Tip I Testi (CO)",
+                "Değer": "285 mg/km (CV* : 319 mg/km)",
+                "Sıra": 52.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "Tip I Testi (THC)",
+                "Değer": "40 mg/km (CV* : 43 mg/km)",
+                "Sıra": 53.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "Tip I Testi (NOx)",
+                "Değer": "20 mg/km (CV* : 23 mg/km)",
+                "Sıra": 54.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "Tip I Testi (NMHC)",
+                "Değer": "33 mg/km (CV* : 36 mg/km)",
+                "Sıra": 54.1
+            },
+            {
+                "Kod": "3.2.15.2",
+                "Özellik Adı": "3.2.15.2. Tip II Testi : Yüksek rölanti / serbest ivmede egzoz emisyonları",
+                "Değer": null,
+                "Sıra": 55.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "(HC Normal)",
+                "Değer": "0 ppm normal rolanti devrinde",
+                "Sıra": 56.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "(HC Yüksek)",
+                "Değer": "0 ppm yüksek rolanti devrinde",
+                "Sıra": 57.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "(CO Normal)",
+                "Değer": "0.5 % yogunluk normal rolanti devrinde",
+                "Sıra": 58.0
+            },
+            {
+                "Kod": "",
+                "Özellik Adı": "(CO Yüksek)",
+                "Değer": "0.3 % yogunluk yüksek rolanti devrinde",
+                "Sıra": 59.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "ENERJİ VERİMLİLİĞİ",
+                "Değer": null,
+                "Sıra": 59.1
+            },
+            {
+                "Kod": "4.0.2.",
+                "Özellik Adı": "Yakıt Tüketimi",
+                "Değer": "4.1 lt/100 km (CV*: 4.1 lt/100 km)",
+                "Sıra": 60.0
+            },
+            {
+                "Kod": "4.0.3.",
+                "Özellik Adı": "CO2 Emisyonları",
+                "Değer": "97 g/km (CV*: 97 g/km)",
+                "Sıra": 61.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "Araç performansının dönüştürülmesi",
+                "Değer": null,
+                "Sıra": 61.1
+            },
+            {
+                "Kod": "8.1.",
+                "Özellik Adı": "Aracın performans seviyesinin (L3e/L4e)-A2 ve (L3e/L4e)-A3 alt kategorileri arasında dönüştürülmesine ve bunun tersine ",
+                "Değer": "",
+                "Sıra": 62.0
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "(işlemine) uygunluğu",
+                "Değer": "evet",
+                "Sıra": 62.5
+            },
+            {
+                "Kod": null,
+                "Özellik Adı": "EK AÇIKLAMALAR",
+                "Değer": null,
+                "Sıra": 63.0
+            },
+            {
+                "Kod": "9.1.",
+                "Özellik Adı": "Notlar",
+                "Değer": "Mali Güç  F(07) I(10)",
+                "Sıra": 998.0
+            },
+            {
+                "Kod": "9.2.",
+                "Özellik Adı": "Muafiyetler",
+                "Değer": "-",
+                "Sıra": 999.0
+            }
+        ]
+    }
+}

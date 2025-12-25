@@ -1,0 +1,297 @@
+[
+    {
+        "Kod": "0.1.",
+        "Özellik Adı": "Markası",
+        "Değer": ""
+    },
+    {
+        "Kod": "0.2.",
+        "Özellik Adı": "Tipi",
+        "Değer": ""
+    },
+    {
+        "Kod": "0.2.1.",
+        "Özellik Adı": "Varyant",
+        "Değer": ""
+    },
+    {
+        "Kod": "0.2.2.2.",
+        "Özellik Adı": "Versiyon",
+        "Değer": ""
+    },
+    {
+        "Kod": "0.2.3.",
+        "Özellik Adı": "Ticari adı (adları)",
+        "Değer": ""
+    },
+    {
+        "Kod": "0.3.",
+        "Özellik Adı": "Aracın Kategorisi",
+        "Değer": ""
+    },
+    {
+        "Kod": "0.4.",
+        "Özellik Adı": "Üretici Firmanın Adı ve Adresi",
+        "Değer": ""
+    },
+    {
+        "Kod": "0.4.2.",
+        "Özellik Adı": "Üretici Firmanın yetkili temsilcisinin adı ve adresi",
+        "Değer": ""
+    },
+    {
+        "Kod": "0.5.1.",
+        "Özellik Adı": "Üretici Firmanın Yasal Olarak Zorunlu Plakasının Yeri",
+        "Değer": ""
+    },
+    {
+        "Kod": "0.5.2.",
+        "Özellik Adı": "Yasal olarak zorunlu plakasının iliştirilme yöntemi",
+        "Değer": ""
+    },
+    {
+        "Kod": "0.6.",
+        "Özellik Adı": "Araç Tanıtım Numarasının Yeri",
+        "Değer": ""
+    },
+    {
+        "Kod": "1.",
+        "Özellik Adı": "Araç Tanıtım Numarası (VIN)",
+        "Değer": ""
+    },
+    {
+        "Kod": "1.3.",
+        "Özellik Adı": "Dingil ve Tekerlek Sayısı",
+        "Değer": ""
+    },
+    {
+        "Kod": "1.3.2.",
+        "Özellik Adı": "Tahrik edilen dingil",
+        "Değer": ""
+    },
+    {
+        "Kod": "6.2.4.",
+        "Özellik Adı": "Gelişmiş fren sistemi",
+        "Değer": ""
+    },
+    {
+        "Kod": "2.2.1.",
+        "Özellik Adı": "Uzunluk",
+        "Değer": ""
+    },
+    {
+        "Kod": "2.2.2.",
+        "Özellik Adı": "Genişlik",
+        "Değer": ""
+    },
+    {
+        "Kod": "2.2.3.",
+        "Özellik Adı": "Yükseklik",
+        "Değer": ""
+    },
+    {
+        "Kod": "2.2.4.",
+        "Özellik Adı": "Dingil mesafesi",
+        "Değer": ""
+    },
+    {
+        "Kod": "2.1.1.",
+        "Özellik Adı": "Yürür vaziyette kütlesi",
+        "Değer": ""
+    },
+    {
+        "Kod": "2.1.2.",
+        "Özellik Adı": "Gerçek kütle",
+        "Değer": ""
+    },
+    {
+        "Kod": "2.1.3.",
+        "Özellik Adı": "Teknik olarak müsaade edilen maks. yüklü kütle",
+        "Değer": ""
+    },
+    {
+        "Kod": "2.1.3.1.",
+        "Özellik Adı": "Ön dingil için teknik olarak müsaade edilen maks. kütle",
+        "Değer": ""
+    },
+    {
+        "Kod": "2.1.3.2.",
+        "Özellik Adı": "Arka dingil için teknik olarak müsaade edilen maks. kütle",
+        "Değer": ""
+    },
+    {
+        "Kod": "3.1.1.1.",
+        "Özellik Adı": "Güç Aktarma Organı Üreticisi",
+        "Değer": ""
+    },
+    {
+        "Kod": "3.1.1.2.",
+        "Özellik Adı": "Motor Kodu",
+        "Değer": ""
+    },
+    {
+        "Kod": "3.2.1.2.",
+        "Özellik Adı": "Yanmalı motorun çalışma prensibi",
+        "Değer": ""
+    },
+    {
+        "Kod": "3.2.1.4.1.",
+        "Özellik Adı": "Silindir Sayısı",
+        "Değer": ""
+    },
+    {
+        "Kod": "3.2.1.4.2.",
+        "Özellik Adı": "Silindirlerin Düzeni",
+        "Değer": ""
+    },
+    {
+        "Kod": "3.2.1.5.",
+        "Özellik Adı": "Motor Hacmi",
+        "Değer": ""
+    },
+    {
+        "Kod": "1.9.",
+        "Özellik Adı": "Azami Net Güç",
+        "Değer": ""
+    },
+    {
+        "Kod": "1.10.",
+        "Özellik Adı": "Güç/Kütle Oranı",
+        "Değer": ""
+    },
+    {
+        "Kod": "3.2.3.1.",
+        "Özellik Adı": "Yakıt türü",
+        "Değer": ""
+    },
+    {
+        "Kod": "3.2.3.2.",
+        "Özellik Adı": "Araç yakıt kombinasyonu",
+        "Değer": ""
+    },
+    {
+        "Kod": "1.8.",
+        "Özellik Adı": "Aracın maksimum hızı",
+        "Değer": ""
+    },
+    {
+        "Kod": "3.5.3.9.",
+        "Özellik Adı": "Transmisyon (tipi)",
+        "Değer": ""
+    },
+    {
+        "Kod": "3.5.4.",
+        "Özellik Adı": "Vites oranları",
+        "Değer": ""
+    },
+    {
+        "Kod": "3.5.4.1.",
+        "Özellik Adı": "Son vites oranları",
+        "Değer": ""
+    },
+    {
+        "Kod": "6.18.1.1",
+        "Özellik Adı": "Lastik ölçüleri (1. Dingil)",
+        "Değer": ""
+    },
+    {
+        "Kod": "6.18.1.1",
+        "Özellik Adı": "Lastik ölçüleri (2. Dingil)",
+        "Değer": ""
+    },
+    {
+        "Kod": "6.20.2.1.",
+        "Özellik Adı": "Kapı konfigürasyonu ve kapıların sayısı",
+        "Değer": ""
+    },
+    {
+        "Kod": "6.16.1.",
+        "Özellik Adı": "Koltuk sayısı ve pozisyonu",
+        "Değer": ""
+    },
+    {
+        "Kod": "6.16.1.1.",
+        "Özellik Adı": "Konumları ve düzeni",
+        "Değer": ""
+    },
+    {
+        "Kod": "4.0.1.",
+        "Özellik Adı": "Çevresel kademe",
+        "Değer": ""
+    },
+    {
+        "Kod": "4.0.6.",
+        "Özellik Adı": "Ölçülen ses seviyesi regülasyon no (AB)",
+        "Değer": ""
+    },
+    {
+        "Kod": "4.0.6.1.",
+        "Özellik Adı": "Dururken ses seviyesi",
+        "Değer": ""
+    },
+    {
+        "Kod": "4.0.6.2.",
+        "Özellik Adı": "Sürüş halinde ses seviyesi",
+        "Değer": ""
+    },
+    {
+        "Kod": "4.0.6.3.",
+        "Özellik Adı": "Lurban (şehir içi) sınır değer",
+        "Değer": ""
+    },
+    {
+        "Kod": "3.2.15.1.",
+        "Özellik Adı": "Tip I Testi: Egzoz emisyonları (CO)",
+        "Değer": ""
+    },
+    {
+        "Kod": "3.2.15.1.",
+        "Özellik Adı": "Tip I Testi: Egzoz emisyonları (THC)",
+        "Değer": ""
+    },
+    {
+        "Kod": "3.2.15.1.",
+        "Özellik Adı": "Tip I Testi: Egzoz emisyonları (NOx)",
+        "Değer": ""
+    },
+    {
+        "Kod": "3.2.15.1.",
+        "Özellik Adı": "Tip I Testi: Egzoz emisyonları (NMHC)",
+        "Değer": ""
+    },
+    {
+        "Kod": "3.2.15.2.",
+        "Özellik Adı": "Tip II Testi: HC (Yüksek Rölanti / Serbest İvme)",
+        "Değer": ""
+    },
+    {
+        "Kod": "3.2.15.2.",
+        "Özellik Adı": "Tip II Testi: CO (Yüksek Rölanti / Serbest İvme)",
+        "Değer": ""
+    },
+    {
+        "Kod": "4.0.2.",
+        "Özellik Adı": "Yakıt Tüketimi",
+        "Değer": ""
+    },
+    {
+        "Kod": "4.0.3.",
+        "Özellik Adı": "CO2 Emisyonları",
+        "Değer": ""
+    },
+    {
+        "Kod": "8.1.",
+        "Özellik Adı": "Performans dönüştürme (L3e/L4e A2-A3)",
+        "Değer": ""
+    },
+    {
+        "Kod": "9.1.",
+        "Özellik Adı": "Açıklamalar / Uyarılar",
+        "Değer": ""
+    },
+    {
+        "Kod": "GENEL YAPIM ÖZELLİKLERİ",
+        "Özellik Adı": null,
+        "Değer": null
+    }
+]
