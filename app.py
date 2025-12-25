@@ -9,10 +9,6 @@ import re
 from datetime import datetime
 from PIL import Image
 
-# --- GOOGLE SHEETS AYARLARI ---
-SHEET_ID = "1f8AN3V-UiWv4B0qsjsYyVony4yEdKGHaSUpIv5_8gQ4"
-SHEET_URL = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=csv"
-
 # --- AYARLAR ---
 SABLON_DOSYASI = "sablonlar.json"
 LOGO_KLASORU = "logos"
@@ -27,13 +23,17 @@ VARSAYILAN_TAAHHUT_METNI = """Asagida imzasi bulunan Özgü ÖZ Firma Yetkili Ma
 
 # --- YARDIMCI FONKSİYONLAR ---
 def sablonlari_yukle():
-    if not os.path.exists(SABLON_DOSYASI): return {}
+    if not os.path.exists(SABLON_DOSYASI): 
+        return {}
     try:
-        with open(SABLON_DOSYASI, "r", encoding="utf-8") as f: return json.load(f)
-    except: return {}
+        with open(SABLON_DOSYASI, "r", encoding="utf-8") as f: 
+            return json.load(f)
+    except: 
+        return {}
 
 def temizle_kod(kod):
-    if not kod or str(kod).lower() in ["none", "nan", ""]: return ""
+    if not kod or str(kod).lower() in ["none", "nan", ""]: 
+        return ""
     return str(kod).strip().rstrip('.')
 
 def yeni_versiyon_adi_bul(temel_ad):
@@ -61,7 +61,7 @@ def sablon_sil(isim):
         return True
     return False
 
-# --- PDF MOTORU (LOCAL DÜZEN KİLİTLİ) ---
+# --- PDF MOTORU (GÖRSEL DÜZEN KİLİTLİ) ---
 def pdf_olustur(vin, veri, manuel_tarih_str=None):
     pdf = FPDF(orientation='L', unit='mm', format='A4')
     pdf.set_margins(left=10, top=10, right=10)
@@ -70,7 +70,8 @@ def pdf_olustur(vin, veri, manuel_tarih_str=None):
         pdf.add_font("ArialTR", style="", fname=font_path, uni=True)
         pdf.add_font("ArialTR", style="B", fname=font_path, uni=True)
         ana_font = "ArialTR"
-    except: ana_font = "Helvetica"
+    except: 
+        ana_font = "Helvetica"
 
     def text_safe(txt):
         if txt is None or str(txt).lower() in ['none', 'nan']: return ""
@@ -84,19 +85,23 @@ def pdf_olustur(vin, veri, manuel_tarih_str=None):
     tarih_bilgisi = manuel_tarih_str if manuel_tarih_str else datetime.now().strftime('%d.%m.%Y')
 
     pdf.set_y(5)
-    pdf.set_font(ana_font, "B", 14); pdf.cell(0, 7, "AT UYGUNLUK BELGESI (CoC)", ln=True, align='C')
-    pdf.set_font(ana_font, "B", 10); pdf.cell(0, 5, f"Sasi No: {vin}", ln=True, align='C')
+    pdf.set_font(ana_font, "B", 14)
+    pdf.cell(0, 7, "AT UYGUNLUK BELGESI (CoC)", ln=True, align='C')
+    pdf.set_font(ana_font, "B", 10)
+    pdf.cell(0, 5, f"Sasi No: {vin}", ln=True, align='C')
 
     marka_adi = text_safe(kimlik.get('marka', '')).strip()
     logo_path = os.path.join(LOGO_KLASORU, f"{marka_adi}.png")
-    if os.path.exists(logo_path): pdf.image(logo_path, x=250, y=5, h=12)
+    if os.path.exists(logo_path): 
+        pdf.image(logo_path, x=250, y=5, h=12)
 
     fs, base_h = 8.5, 5.0
     header_end_y = pdf.get_y() + 4
     pdf.set_y(header_end_y)
     
     if kimlik.get("taahut"):
-        pdf.set_font(ana_font, "B", fs); pdf.multi_cell(140, base_h, text_safe(kimlik.get("taahut")), 0, 'L')
+        pdf.set_font(ana_font, "B", fs)
+        pdf.multi_cell(140, base_h, text_safe(kimlik.get("taahut")), 0, 'L')
         pdf.set_y(pdf.get_y() + 1.5)
 
     x_pos, v_done = 10, False
@@ -107,21 +112,29 @@ def pdf_olustur(vin, veri, manuel_tarih_str=None):
         pdf.set_font(ana_font, "B", fs)
         curr_y = pdf.get_y()
         if curr_y > 188 and x_pos == 10:
-            x_pos = 155; pdf.set_y(header_end_y); curr_y = header_end_y
+            x_pos = 155
+            pdf.set_y(header_end_y)
+            curr_y = header_end_y
 
-        pdf.set_xy(x_pos, curr_y); pdf.cell(14, base_h, t_kod)
-        pdf.set_xy(x_pos + 14, curr_y); pdf.multi_cell(60, base_h, text_safe(m.get('Özellik Adı', '')))
+        pdf.set_xy(x_pos, curr_y)
+        pdf.cell(14, base_h, t_kod)
+        pdf.set_xy(x_pos + 14, curr_y)
+        pdf.multi_cell(60, base_h, text_safe(m.get('Özellik Adı', '')))
         y_aft = pdf.get_y()
-        pdf.set_xy(x_pos + 76, curr_y); pdf.multi_cell(64, base_h, f": {val}")
+        pdf.set_xy(x_pos + 76, curr_y)
+        pdf.multi_cell(64, base_h, f": {val}")
         pdf.set_y(max(y_aft, pdf.get_y()))
 
         if t_kod == "1" and not v_done and x_pos == 10:
             pdf.set_y(pdf.get_y() + 2)
             pdf.multi_cell(140, base_h*0.82, text_safe(kimlik.get("aciklama", VARSAYILAN_ACIKLAMA_METNI)), 0, 'J')
             imza_y = pdf.get_y() + 5
-            if os.path.exists(IMZA_DOSYASI): pdf.image(IMZA_DOSYASI, x=x_pos + 90, y=imza_y, h=18)
-            pdf.set_xy(x_pos, imza_y + 10); pdf.cell(85, 5, f"Yer: {kimlik.get('yer', 'Ankara')} | Tarih: {tarih_bilgisi}")
-            pdf.set_y(imza_y + 25); v_done = True
+            if os.path.exists(IMZA_DOSYASI): 
+                pdf.image(IMZA_DOSYASI, x=x_pos + 90, y=imza_y, h=18)
+            pdf.set_xy(x_pos, imza_y + 10)
+            pdf.cell(85, 5, f"Yer: {kimlik.get('yer', 'Ankara')} | Tarih: {tarih_bilgisi}")
+            pdf.set_y(imza_y + 25)
+            v_done = True
 
     pdf.line(152, 25, 152, 200)
     return pdf.output(dest='S').encode('latin-1')
@@ -164,7 +177,8 @@ elif menu == "📝 Şablon Yönetimi":
                 if st.button("📂 Yükle"):
                     st.session_state.current_df = pd.DataFrame(s_all[s_sec]["teknik"])
                     st.session_state.marka = s_all[s_sec]["kimlik"].get("marka", "")
-                    st.session_state.s_ad = yeni_versiyon_adi_bul(s_sec); st.rerun()
+                    st.session_state.s_ad = yeni_versiyon_adi_bul(s_sec)
+                    st.rerun()
 
     with tab2:
         upl = st.file_uploader("Excel/CSV", type=["xlsx", "csv"])
@@ -180,7 +194,8 @@ elif menu == "📝 Şablon Yönetimi":
     if st.button("💾 Kaydet"):
         if s_ad and marka:
             sablon_kaydet(s_ad, {"marka": marka, "taahut": VARSAYILAN_TAAHHUT_METNI, "aciklama": VARSAYILAN_ACIKLAMA_METNI, "yer": "Ankara"}, final_df)
-            st.success("Kaydedildi!"); st.rerun()
+            st.success("Kaydedildi!")
+            st.rerun()
 
 elif menu == "🏭 Belge Üretimi":
     st.header("🖨️ PDF Üretim Merkezi")
