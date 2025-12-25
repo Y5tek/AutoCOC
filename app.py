@@ -64,17 +64,21 @@ def sablon_sil(isim):
 def pdf_olustur(vin, veri, manuel_tarih_str=None):
     pdf = FPDF(orientation='L', unit='mm', format='A4')
     pdf.set_margins(left=10, top=10, right=10)
+    
+    # Font kontrolü ve yükleme
     font_path = "arial.ttf"
     if os.path.exists(font_path):
         pdf.add_font("ArialTR", style="", fname=font_path, uni=True)
         pdf.add_font("ArialTR", style="B", fname=font_path, uni=True)
         ana_font = "ArialTR"
-    else: ana_font = "Helvetica"
+    else: 
+        ana_font = "Helvetica"
 
+    # Türkçe karakterler için güvenli metin dönüştürücü
     def text_safe(txt):
         if txt is None or str(txt).lower() in ['none', 'nan']: return ""
-        tr_map = str.maketrans("İıĞğŞşÜüÖöÇç", "IiGgSsUuOoCc")
-        return str(txt).translate(tr_map)
+        # Unicode karakterleri desteklemek için uni=True kullanıyoruz, bu yüzden doğrudan metni döndürüyoruz
+        return str(txt)
 
     pdf.add_page()
     pdf.set_auto_page_break(auto=False)
@@ -87,7 +91,7 @@ def pdf_olustur(vin, veri, manuel_tarih_str=None):
     tarih_bilgisi = manuel_tarih_str if manuel_tarih_str else datetime.now().strftime('%d.%m.%Y')
 
     pdf.set_y(5)
-    pdf.set_font(ana_font, "B", 14); pdf.cell(0, 7, "AT UYGUNLUK BELGESİ (CoC)", ln=True, align='C')
+    pdf.set_font(ana_font, "B", 14); pdf.cell(0, 7, text_safe("AT UYGUNLUK BELGESİ (CoC)"), ln=True, align='C')
     pdf.set_font(ana_font, "B", 10); pdf.cell(0, 5, f"Sasi No: {vin}", ln=True, align='C')
 
     marka_adi = text_safe(kimlik.get('marka', '')).strip()
@@ -173,17 +177,22 @@ elif menu == "🏭 Belge Üretimi":
             
             if st.button("🚀 Üret") and tx:
                 buf = io.BytesIO()
-                with zipfile.ZipFile(buf, "w") as zf:
-                    for v in [x.strip() for x in tx.split('\n') if x.strip()]:
-                        pdf = pdf_olustur(v, sablonlar[secim], t_str)
-                        # HATA DÜZELTME: PDF verisi encode edilerek byte formatına çevrildi
-                        pdf_data = pdf.output(dest='S').encode('latin-1')
-                        zf.writestr(f"{v}.pdf", pdf_data)
-                st.download_button("📦 Paketi İndir", buf.getvalue(), "coc_paket.zip", "application/zip")
+                try:
+                    with zipfile.ZipFile(buf, "w") as zf:
+                        for v in [x.strip() for x in tx.split('\n') if x.strip()]:
+                            pdf = pdf_olustur(v, sablonlar[secim], t_str)
+                            # ÇÖZÜM: PDF verisini byte array olarak alıyoruz
+                            pdf_output = pdf.output(dest='S')
+                            if isinstance(pdf_output, str):
+                                pdf_output = pdf_output.encode('latin-1')
+                            zf.writestr(f"{v}.pdf", pdf_output)
+                    st.download_button("📦 Paketi İndir", buf.getvalue(), "coc_paket.zip", "application/zip")
+                except Exception as e:
+                    st.error(f"Hata oluştu: {str(e)}")
         else: st.warning("Eşleşen şablon bulunamadı.")
     else: st.info("Henüz şablon oluşturulmamış.")
 
-# --- ŞABLON YÖNETİMİ ---
+# --- ŞABLON YÖNETİMİ VE DİĞERLERİ ---
 elif menu == "📝 Şablon Yönetimi":
     st.header("🛠️ Şablon Yönetimi")
     tab1, tab2 = st.tabs(["📂 Düzenle", "🆕 Yeni Şablon"])
@@ -217,7 +226,6 @@ elif menu == "📝 Şablon Yönetimi":
         sablon_kaydet(s_ad, {"marka": marka, "taahut": taahut, "aciklama": aciklama, "yer": "Ankara"}, final_df)
         st.success("Kaydedildi")
 
-# --- AYARLAR ---
 elif menu == "⚙️ Logo & İmza Ayarları":
     st.header("⚙️ Logo ve İmza")
     c1, c2 = st.columns(2)
